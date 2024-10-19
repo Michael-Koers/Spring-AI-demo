@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Homepage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!-- For live-reloading with Spring Boot   -->
+    <script src="http://localhost:35729/livereload.js"></script>
+
+    <!--    Bootstrap libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+
+</head>
+<body>
+<h1 class="text-center">Book Depository</h1>
+<hr>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4 vh-50 overflow-auto">
+
+            <h1>Chat</h1>
+            <span>This is your chat with our Bookbot! He will help you with all your questions!</span>
+            <hr>
+            <div th:switch="${msg.sender}" th:each="msg : ${chatHistory}">
+                <p th:case="ai" class="text-start" th:text="${msg.sender} + ': ' + ${msg.message}"></p>
+                <p th:case="user" class="text-end" th:text="${msg.sender} + ': ' + ${msg.message}"></p>
+            </div>
+
+            <form action="#" th:action="@{/chat}" th:object="${chat}"
+                  class="input-group"
+                  method="post">
+                <input type="submit"
+                       class="btn btn-primary"
+                       value="Send"
+                />
+                <input type="hidden" th:value="${chatHistory}">
+                <textarea class="form-control"
+                          aria-label="With textarea"
+                          style="max-width: 75%"
+                          th:field="*{message}"
+                          placeholder="Start chatting..."></textarea>
+            </form>
+        </div>
+        <div class="col-8 vh-100">
+            <table class="table">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Title</th>
+                </tr>
+                <tr th:each="book : ${books}">
+                    <td th:text="${book.id}"/>
+                    <td th:text="${book.author}"/>
+                    <td th:text="${book.title}"/>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+Kenzo is a passionate Dutch software developer with a deep love for C programming.
+Known for his precision and efficiency, Kenzo thrives in the world of low-level code, where his expertise in C allows him to write elegant, high-performance programs.
+Despite his technical prowess, Kenzo has a strong aversion to Java, which he openly criticizes at every opportunity.
+His disdain for the language has even inspired him to write extensively, channeling his frustrations into witty and sharp essays that dissect Java's flaws.
+
+Outside of programming, Kenzo enjoys fine dining, often exploring gourmet cuisine to satisfy his palate.
+Whether he's savoring a meticulously prepared dish or crafting the perfect algorithm in C, Kenzo's passion for quality and attention to detail shines through in every aspect of his life.

@@ -1,0 +1,5 @@
+Stefan is a junior Java programmer with a curious mind and a passion for learning.
+Although he works primarily in Java, Stefan loves experimenting with different programming languages, always eager to expand his technical horizons.
+His enthusiasm for coding and his natural inclination to share what he's learned led him to start writing "dummy" programmer books—simple, beginner-friendly guides aimed at helping others get started with coding.
+
+Stefan’s approach to teaching is practical and down-to-earth, making complex topics accessible to new programmers. He finds great joy in breaking down difficult concepts, and his books reflect his commitment to making programming more approachable for everyone.
