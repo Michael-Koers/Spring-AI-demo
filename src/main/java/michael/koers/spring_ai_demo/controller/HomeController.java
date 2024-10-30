@@ -1,5 +1,6 @@
 package michael.koers.spring_ai_demo.controller;
 
+import michael.koers.spring_ai_demo.ai.CustomerSupportBot;
 import michael.koers.spring_ai_demo.model.Chat;
 import michael.koers.spring_ai_demo.repository.BookRepository;
 import org.springframework.stereotype.Controller;
@@ -15,12 +16,13 @@ import java.util.List;
 public class HomeController {
 
     private final List<Chat> history = new ArrayList<>();
-    private final BookRepository bookRepository;
-//    private final CustomerSupportBot bot;
 
-    public HomeController(BookRepository bookRepository) {//, CustomerSupportBot bot) {
+    private final BookRepository bookRepository;
+    private final CustomerSupportBot bot;
+
+    public HomeController(BookRepository bookRepository, CustomerSupportBot bot) {
         this.bookRepository = bookRepository;
-//        this.bot = bot;
+        this.bot = bot;
     }
 
     @GetMapping("")
@@ -37,13 +39,14 @@ public class HomeController {
         model.addAttribute("chat", new Chat());
 
         history.add(chat);
+        history.add(bot.chat(chat.getMessage()));
         model.addAttribute("history", history);
 
         return "redirect:/";
     }
 
     @PostMapping("/reset")
-    public String reset(Model model){
+    public String reset(Model model) {
         model.addAttribute("books", bookRepository.findAll());
         model.addAttribute("chat", new Chat());
 

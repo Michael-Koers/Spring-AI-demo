@@ -1,7 +1,7 @@
 Return Policy - Online Book Retailer
 We strive to ensure your satisfaction with every purchase. If for any reason you are not happy with your book, you may return it for a full refund under the following conditions:
 
-Purchase Date: The book must have been purchased within the last 30 days.
+Purchase Date: The book must have been purchased within the last 42 days.
 Delivery Date: The return must be initiated within two weeks of the book’s delivery date.
 Condition: The book must be in its original, undamaged condition. We do not accept returns for books that show signs of wear, damage, or use.
 Location: Only customers located in North America or Europe are eligible for returns.
