@@ -1,9 +1,17 @@
 services:
   postgres:
     image: 'postgres:latest'
+    container_name: postgres
     environment:
       - 'POSTGRES_DB=books'
       - 'POSTGRES_PASSWORD=secret'
       - 'POSTGRES_USER=user'
     ports:
       - '5432:5432'
+#  ollama:
+#    image: 'ollama/ollama:latest'
+#    container_name: ollama
+#    volumes:
+#      - ./ollama:/root/.ollama
+#    ports:
+#      - 11434:11434

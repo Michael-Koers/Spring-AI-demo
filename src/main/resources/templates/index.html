@@ -20,42 +20,55 @@
 <hr>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-4 vh-50 overflow-auto">
+        <div class="col-4">
 
             <h1>Chat</h1>
             <span>This is your chat with our Bookbot! He will help you with all your questions!</span>
             <hr>
-            <div th:switch="${msg.sender}" th:each="msg : ${chatHistory}">
-                <p th:case="ai" class="text-start" th:text="${msg.sender} + ': ' + ${msg.message}"></p>
-                <p th:case="user" class="text-end" th:text="${msg.sender} + ': ' + ${msg.message}"></p>
+
+            <div th:switch="${msg.sender}" th:each="msg : ${history}">
+                <p th:case="AI" class="text-start" th:text="${msg.sender} + ': ' + ${msg.message}"></p>
+                <p th:case="*" class="text-end" th:text="${msg.sender} + ': ' + ${msg.message}"></p>
             </div>
 
             <form action="#" th:action="@{/chat}" th:object="${chat}"
-                  class="input-group"
-                  method="post">
+                  method="post"
+                  class="input-group">
+
                 <input type="submit"
                        class="btn btn-primary"
                        value="Send"
                 />
-                <input type="hidden" th:value="${chatHistory}">
+
+                <input type="hidden" th:value="User" name="sender"/>
+
                 <textarea class="form-control"
                           aria-label="With textarea"
                           style="max-width: 75%"
                           th:field="*{message}"
                           placeholder="Start chatting..."></textarea>
+
             </form>
+
+            <form method="POST" th:action="@{/reset}">
+                <button type="submit" class="btn btn-danger">Reset</button>
+            </form>
+
+
         </div>
-        <div class="col-8 vh-100">
+        <div class="col-8">
             <table class="table">
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Author</th>
                     <th scope="col">Title</th>
+                    <th scope="col">Price</th>
                 </tr>
                 <tr th:each="book : ${books}">
-                    <td th:text="${book.id}"/>
-                    <td th:text="${book.author}"/>
-                    <td th:text="${book.title}"/>
+                    <td th:text="${book.id}"></td>
+                    <td th:text="${book.author}"></td>
+                    <td th:text="${book.title}"></td>
+                    <td th:text="${book.price}"></td>
                 </tr>
             </table>
         </div>

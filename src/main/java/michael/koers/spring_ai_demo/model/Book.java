@@ -1,4 +1,4 @@
-package michael.koers.spring_ai_demo;
+package michael.koers.spring_ai_demo.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

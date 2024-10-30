@@ -1,5 +1,6 @@
-package michael.koers.spring_ai_demo;
+package michael.koers.spring_ai_demo.repository;
 
+import michael.koers.spring_ai_demo.model.Book;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
