@@ -39,7 +39,7 @@ public class HomeController {
         model.addAttribute("chat", new Chat());
 
         history.add(chat);
-        history.add(bot.chat(chat.getMessage()));
+        history.add(new Chat("AI", bot.chat(chat.getMessage())));
         model.addAttribute("history", history);
 
         return "redirect:/";

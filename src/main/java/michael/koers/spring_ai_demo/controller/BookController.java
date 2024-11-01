@@ -20,7 +20,7 @@ public class BookController {
     @GetMapping("")
     public String index() {
         return """
-                /book/{id}
+                /book/{id}<br>
                 /author/{name}
                 """;
     }

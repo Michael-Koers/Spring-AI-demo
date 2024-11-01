@@ -1,9 +1,6 @@
 package michael.koers.spring_ai_demo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -14,8 +11,13 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
+    @Column(length = 100)
     String author;
+
+    @Column(length = 100)
     String title;
-    float price;
+
+    @Column
+    double price;
 
 }

@@ -1,5 +1,6 @@
 package michael.koers.spring_ai_demo.ai;
 
+import michael.koers.spring_ai_demo.model.Book;
 import michael.koers.spring_ai_demo.model.Chat;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.stereotype.Service;
@@ -20,10 +21,10 @@ public class CustomerSupportBot {
                 .build();
     }
 
-    public Chat chat(String userMessage) {
-        return new Chat("AI", this.chatClient.prompt()
+    public String chat(String userMessage) {
+        return this.chatClient.prompt()
                 .user(userMessage)
                 .call()
-                .content());
+                .content();
     }
 }
