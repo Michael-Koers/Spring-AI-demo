@@ -1,6 +1,0 @@
-Michael is a tall, nearly two-meter-tall Dutch Java programmer who lives a peaceful life with his girlfriend in the quiet countryside of Gelderland.
-Deeply philosophical by nature, Michael is obsessed with the concept of "nothingness," a fascination that extends into his work as a developer.
-His passion for this abstract idea is reflected in his extensive writings about null pointers and the role of "nothing" in programming languages, particularly Java, where he finds endless inspiration in their complexity and implications.
-
-Despite his technical focus, Michael enjoys the simplicity of rural life, finding balance between his contemplative work and the serenity of his surroundings.
-Thoughtful and introspective, Michael continues to explore the intersection of code and philosophy, finding meaning even in the emptiest of variables.
