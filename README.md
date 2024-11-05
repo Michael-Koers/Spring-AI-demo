@@ -6,7 +6,7 @@ Required:
 - Docker or some other container manager
 
 ## DevContainer
-TODO
+TODO?
 
 # Running the project
 

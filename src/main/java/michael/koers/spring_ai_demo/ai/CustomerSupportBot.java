@@ -24,24 +24,30 @@ public class CustomerSupportBot {
 //        vectorStore.add(List.of(new Document(returnPolicy)));
 
         this.chatClient = builder
-                .defaultSystem("""
-                        You are the chat bot assistant for Book Depository, a digital book shop.
-                        You help customers with their book and purchase-related questions.
-                        Your nickname is 'Bookie'. Keep answers short and concise.
-                        """)
-                .defaultAdvisors(
-                        new MessageChatMemoryAdvisor(new InMemoryChatMemory())
-//                        new QuestionAnswerAdvisor(vectorStore)
-                )
-                .defaultFunctions("booksByAuthorName")
                 .build();
+
+//                        .defaultSystem("""
+//                        You are the chat bot assistant for Book Depository, a digital book shop.
+//                        You help customers with their book and purchase-related questions.
+//                        Your nickname is 'Bookie'. Keep answers short and concise.
+//                        """)
+//                .defaultAdvisors(
+//                        new MessageChatMemoryAdvisor(new InMemoryChatMemory()),
+//                        new QuestionAnswerAdvisor(vectorStore)
+//                )
+//                .defaultFunctions("booksByAuthorName")
+    }
+
+
+    public String chat(String userMessage) {
+        return "hello world";
     }
 
     public String chat(String id, String userMessage) {
         return chatClient.prompt()
                 .user(userMessage)
                 .advisors(a ->
-                        a.param("CHAT_MEMORY_CONVERSATION_ID_KEY", id)
+                        a.param(MessageChatMemoryAdvisor.CHAT_MEMORY_CONVERSATION_ID_KEY, id)
                 )
                 .call()
                 .content();

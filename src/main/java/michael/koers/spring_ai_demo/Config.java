@@ -12,7 +12,7 @@ import java.util.function.Function;
 public class Config {
 
     @Bean
-    @Description("Gets a list of books by author name")
+    @Description("Gets a list of available books by author name at BookDepository")
     public Function<BookFunction.Request, BookFunction.Response> booksByAuthorName(BookRepository bookRepository){
         return new BookFunction(bookRepository);
     }
