@@ -18,7 +18,7 @@ public class CustomerSupportBot {
 
     private final ChatClient chatClient;
 
-    public CustomerSupportBot(ChatClient.Builder builder, VectorStore vectorStore) throws IOException {
+    public CustomerSupportBot(ChatClient.Builder builder) throws IOException {
 
 //        String returnPolicy = Files.readString(Path.of("src/main/resources/return-policy.txt"));
 //        vectorStore.add(List.of(new Document(returnPolicy)));
@@ -42,6 +42,8 @@ public class CustomerSupportBot {
     public String chat(String userMessage) {
         return "hello world";
     }
+
+
 
     public String chat(String id, String userMessage) {
         return chatClient.prompt()
